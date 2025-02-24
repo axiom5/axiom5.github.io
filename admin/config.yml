@@ -65,14 +65,14 @@ backend:
   repo: axiom5/aseem.github.io # Your GitHub username/repo
   branch: main
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 # For local development
 local_backend: true
 
 # Media folder where uploads will be stored
-media_folder: "assets/img/uploads"
-public_folder: "/assets/img/uploads"
+media_folder: "assets/img"
+public_folder: "/assets/img"
 
 # Collections define the structure for content types
 collections:
@@ -82,19 +82,19 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "select", options: ["about", "page", "post"]}
+      - {label: "Layout", name: "layout", widget: "select", options: ["page"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Permalink", name: "permalink", widget: "string", pattern: ['^/[a-zA-Z0-9-/]+/$', "Must start with a slash and end with a slash"]}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      
+
   - name: "projects"
     label: "Projects"
     folder: "_projects"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "select", options: ["page", "project"]}
+      - {label: "Layout", name: "layout", widget: "select", options: ["project"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Category", name: "category", widget: "select", options: ["work", "personal", "research"], required: false}
@@ -103,14 +103,17 @@ collections:
       - {label: "Redirect Link", name: "redirect", widget: "string", required: false}
       - {label: "GitHub Link", name: "github_link", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      
-  - name: "news"
-    label: "News"
-    folder: "_news"
+
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Layout", name: "layout", widget: "select", options: ["post"]}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Author", name: "author", widget: "string", default: "Aseem Subedi"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
