@@ -1,0 +1,60 @@
+# backend:
+#   name: git-gateway
+#   proxy_url: http://localhost:8081/api/v1
+#   branch: master # Or your main branch name, e.g., main, master
+
+# media_folder: assets/img # Where media files will be stored (adjust if needed)
+# public_folder: assets/img # The public path for media files (adjust if needed)
+
+# collections:
+#   - name: 'posts' # Used in routes, e.g., /admin/collections/blog
+#     label: 'Blog Posts' # Human readable name
+#     folder: '_posts' # Path to files
+#     create: true # Allow users to create new posts in this collection
+#     slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., 2025-02-23-my-post.md
+#     format: 'markdown' # or 'yaml', 'json', 'toml'
+#     fields: # Fields for each document, same as TinaCMS fields
+#       - { label: 'Title', name: 'title', widget: 'string' }
+#       - { label: 'Date', name: 'date', widget: 'datetime' }
+#       - { label: 'Body', name: 'body', widget: 'markdown' }
+#       - { label: 'Thumbnail Image', name: 'thumbnail', widget: 'image', required: false, allow_url: false }
+
+#   - name: 'pages'
+#     label: 'Pages'
+#     folder: '_pages'
+#     create: true
+#     format: 'markdown'
+#     fields:
+#       - { label: 'Title', name: 'title', widget: 'string' }
+#       - { label: 'Body', name: 'body', widget: 'markdown' }
+
+
+backend:
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
+  branch: master # or master, depending on your main branch name
+
+media_folder: "assets/img"  # Where uploaded images are stored
+public_folder: "/assets/img"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "_pages"
+    create: true
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "thumbnail", widget: "image", required: false }

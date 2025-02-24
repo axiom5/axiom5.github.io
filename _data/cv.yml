@@ -1,0 +1,177 @@
+# - title: General Information
+#   type: map
+#   contents:
+#     - name: Full Name
+#       value: ASEEM P Subedi
+#     - name: Email
+#       value: subeda [at] rpi [dot] edu
+#     - name: Location
+#       value: Troy, NY, USA
+#     - name: Phone
+#       value: (518) 577-5670
+
+- title: Summary
+  type: map
+  contents:
+    - name: Overview
+      value: PhD candidate with expertise in machine learning research for BCI (fNIRS, EEG), physiological signals (ECG, pupillometry) and behavior (EMG, eye-tracking). Proficient in statistical and AI models for time-series analysis. Specializing in novel ML methods for health sensing, neuromotor interfaces and quantitative analysis.
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Ph.D. in Mechanical Engineering
+      institution: Rensselaer Polytechnic Institute
+      year: Sep 2025 (Expected)
+      description: "GPA: 3.58/4.0, Thesis: Bimanual Motor Skill Assessment Using Raw Neuroimaging, Explainable AI, and Multimodal Integration" # Description as single string
+    - title: M.Eng. in Mechanical Engineering
+      institution: Rensselaer Polytechnic Institute
+      year: May 2024
+      description: "GPA: 3.69/4.0, Project: A Dilated Causal Convolutional Model for Surgical Skill Assessment Using Optical Neuroimaging" # Description as single string
+
+- title: Technical Skills
+  type: map
+  contents:
+    - name: ML & Modeling
+      value: CNNs, Transformers, WaveNet, Autoencoders, Adversarial methods, Ensemble learning
+    - name: Programming/Script
+      value: Python (Tensorflow, Pytorch, JAX, MLX), C, Matlab, R
+    - name: Tools & libraries
+      value: SciPy, Sckit-learn, Pandas, AWS, Homer3, EEGlab, MNE, SPSS
+    - name: Advanced Methods
+      value: Numerical Optimization, System Identification, Information Theory
+    - name: Engineering & Design
+      value: SolidWorks, AutoCAD, ANSYS (Fluent, ICEM-CFD), XFLR5
+
+- title: Research Experience
+  type: time_table
+  contents:
+    - title: Neuroimaging & ML for Human Factors
+      institution: CeMSIM, RPI
+      year: Jan 2020 – Present
+      description: "Developed AI models for classifying surgical skill performance and exploring effects of stress. Created data pipelines to denoise and compile large-scale fNIRS/physiological datasets. Utilized novel BERT-inspired methods to fuse hemodynamic, pupillary, and EEG signals for neuromotor analysis. Provided data-driven insights on IRB protocols, device feasibility, and sensor usage, ensuring ethical and efficient data collection." # Description as single string
+
+
+- title: Teaching / Industry Experience
+  type: time_table
+  contents:
+    - title: Teaching Assistant
+      institution: School of Engineering (RPI)
+      year: Jan 2020 – May 2020
+      description: "Mentored 200+ students for graduate (Machine Dynamics) and undergraduate (Numerical Methods) level courses" # Description as single string
+    - title: R&D Co-Director
+      institution: GRIT Engineering Pvt. Ltd.
+      year: May 2018 – Sep 2023
+      description: "Led machinery designs for TV franchises, HDPE recycling systems, and fabrication projects. Supervised intern teams in CAD modeling (dumbwaiters, food expeller systems, river ferries)" # Description as single string
+    - title: Robotics Intern
+      institution: Paaila Technology
+      year: Dec 2017 – May 2018
+      description: "Assisted in designing and fabricating mobility/articulation mechanisms for a commercial robotic waiter." # Description as single string
+
+- title: Volunteering & Achievements
+  type: list
+  contents:
+    - "Robotics Competitions: Represented Nepal at ABU Robocon, winning consecutive team awards in 2015 and 2016"
+    - "Social Initiatives: Organized alumni-funded winter supply distribution to 9 villages. Hands-on deployment of 100+ post-earthquake relief housing in 14 remote locations of Nepal, 2015."
+    - "IOE Entrance Scholarship: Full-tuition, merit-based award"
+
+
+
+# - title: General Information
+#   type: map
+#   contents:
+#     - name: Full Name
+#       value: Junshen Xu
+#     #- name: Date of Birth
+#     #  value: 14th March 1879
+#     - name: Email
+#       value: junshen [at] mit [dot] edu
+#     - name: Languages
+#       value: English, Chinese
+
+# - title: Education
+#   type: time_table
+#   contents:
+#     - title: Ph.D. in Electrical Engineering and Computer Science
+#       institution: Massachusetts Institute of Technology
+#       year: 2018 - 2023
+#     - title: S.M. in Electrical Engineering and Computer Science
+#       institution: Massachusetts Institute of Technology
+#       year: 2018 - 2020
+#       #description:
+#       #  - Description 1.
+#       #  - Description 2.
+#     - title: B.E. in Engineering Physics
+#       institution: Tsinghua University
+#       year: 2014 - 2018
+#       #description:
+#       #  - Description 1.
+#       #  - Description 2.
+
+# - title: Experience
+#   type: time_table
+#   contents:
+#     - title: Research Assistant
+#       institution: Massachusetts Institute of Technology
+#       year: 2018 - present
+#       description:
+#         - 2D-to-3D reconstruction
+#         - Image quality assessment
+#         - 3D pose estimation pipeline for fetal MRI
+#     - title: Machine Learning Engineer Intern
+#       institution: Instagram Reels Core Ranking @ Meta
+#       year: May - Aug 2022
+#       description:
+#         - Mitigated short video bias in Reels
+#     - title: Software Engineer Intern
+#       institution: Adwords Insights Team @ Google
+#       year: Jun - Aug 2021
+#       description:
+#         - Improved keyword classification in search ads
+#         - Developed algorithms to detect the cold start of bidding strategies
+#     - title: Research Scientist Intern
+#       institution: United Imaging Intellignece America
+#       year: Jun - Aug 2020
+#       description:
+#         - Multi-modal image registration with neural ODE
+#         - Differentiable Digitally Reconstructed Radiograph (DRR)
+#     - title: Research Assistant
+#       institution: Stanford University
+#       year: Jun - Aug 2017
+#       description:
+#         - Low dose PET reconstruction with deep learning
+
+# - title: Open Source Projects
+#   type: time_table
+#   contents:
+#     - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
+#       year: 2015-now
+#       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+
+# - title: Honors and Awards
+#   type: time_table
+#   contents:
+#     - year: 1921
+#       items: 
+#         - Nobel Prize in Physics 
+#         - Matteucci Medal
+#     - year: 2029
+#       items: 
+#         - Max Planck Medal
+
+# - title: Academic Interests
+#   type: nested_list
+#   contents:
+#     - title: Topic 1.
+#       items: 
+#         - Description 1.
+#         - Description 2.
+#     - title: Topic 2.
+#       items:
+#         - Description 1.
+#         - Description 2.
+
+# - title: Other Interests
+#   type: list
+#   contents:
+#     - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+
