@@ -1,11 +1,35 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Content Manager</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager | Aseem Subedi</title>
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <!-- Include the script that builds the page and powers Decap CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+  <script>
+    // Enable local backend in development
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      window.CMS_MANUAL_INIT = true;
+      window.decapInit = function() {
+        CMS.init({
+          config: {
+            backend: {
+              name: 'test-repo'
+            }
+          }
+        });
+      };
+      // Load the local backend script
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/netlify-cms-yoast-seo@~1.0/dist/netlify-cms-yoast-seo.js';
+      script.onload = function() {
+        // Initialize after loading the local backend
+        window.decapInit();
+      };
+      document.body.appendChild(script);
+    }
+  </script>
 </body>
 </html>

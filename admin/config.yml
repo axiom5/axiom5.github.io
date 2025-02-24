@@ -29,32 +29,88 @@
 #       - { label: 'Body', name: 'body', widget: 'markdown' }
 
 
+# backend:
+#   name: github # proxy #
+#   # proxy_url: http://localhost:8081/api/v1
+#   branch: main # or master, depending on your main branch name
+
+# media_folder: "assets/img"  # Where uploaded images are stored
+# public_folder: "/assets/img"
+
+# collections:
+#   - name: "projects"
+#     label: "Projects"
+#     folder: "_projects"
+#     create: true
+#     format: "frontmatter"
+#     fields:
+#       - { label: "Title", name: "title", widget: "string" }
+#       - { label: "Body", name: "body", widget: "markdown" }
+
+#   - name: "posts"
+#     label: "Blog Posts"
+#     folder: "_posts"
+#     create: true
+#     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+#     format: "frontmatter"
+#     fields:
+#       - { label: "Title", name: "title", widget: "string" }
+#       - { label: "Date", name: "date", widget: "datetime" }
+#       - { label: "Body", name: "body", widget: "markdown" }
+#       - { label: "Image", name: "thumbnail", widget: "image", required: false }
+
+# For production, use GitHub backend
 backend:
-  name: git-gateway # proxy #
-  # proxy_url: http://localhost:8081/api/v1
-  branch: main # or master, depending on your main branch name
+  name: github
+  repo: axiom5/aseem.github.io # Your GitHub username/repo
+  branch: main
 
-media_folder: "assets/img"  # Where uploaded images are stored
-public_folder: "/assets/img"
+publish_mode: editorial_workflow
 
+# For local development
+local_backend: true
+
+# Media folder where uploads will be stored
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+# Collections define the structure for content types
 collections:
   - name: "pages"
     label: "Pages"
     folder: "_pages"
     create: true
-    format: "frontmatter"
+    slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "posts"
-    label: "Blog Posts"
-    folder: "_posts"
+      - {label: "Layout", name: "layout", widget: "select", options: ["about", "page", "post"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Permalink", name: "permalink", widget: "string", pattern: ['^/[a-zA-Z0-9-/]+/$', "Must start with a slash and end with a slash"]}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
+  - name: "projects"
+    label: "Projects"
+    folder: "_projects"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    format: "frontmatter"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: "thumbnail", widget: "image", required: false }
+      - {label: "Layout", name: "layout", widget: "select", options: ["page", "project"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Category", name: "category", widget: "select", options: ["work", "personal", "research"], required: false}
+      - {label: "Importance", name: "importance", widget: "number", min: 1, step: 1, required: false}
+      - {label: "Featured Image", name: "img", widget: "image", required: false}
+      - {label: "Redirect Link", name: "redirect", widget: "string", required: false}
+      - {label: "GitHub Link", name: "github_link", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
+  - name: "news"
+    label: "News"
+    folder: "_news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}

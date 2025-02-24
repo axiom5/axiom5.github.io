@@ -207,7 +207,10 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ['_pages']
+include:
+  - '_pages'
+  - 'admin' # for proxy server
+
 exclude:
   - bin
   - Gemfile
