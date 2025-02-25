@@ -32,7 +32,7 @@
 backend:
   name: git-gateway # proxy #
   # proxy_url: http://localhost:8081/api/v1
-  branch: master # or master, depending on your main branch name
+  branch: main # or master, depending on your main branch name
 
 media_folder: "assets/img"  # Where uploaded images are stored
 public_folder: "/assets/img"
