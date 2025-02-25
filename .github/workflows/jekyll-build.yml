@@ -5,6 +5,12 @@ on:
     branches:
       - main  # or master, depending on your default branch name
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -12,6 +18,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for .GitInfo and .Lastmod
       
       - name: Read Ruby version from .ruby-version if exists
         id: ruby-version
@@ -36,9 +44,25 @@ jobs:
       - name: Build Jekyll site
         run: bundle exec jekyll build
       
+      # New simplified deployment approach
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: gh-pages  # The branch where the built site will be published
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          
+          # Create or use orphan branch for GitHub Pages
+          git checkout --orphan gh-pages
+          
+          # Remove everything except _site directory
+          find . -maxdepth 1 -not -path "./_site" -not -path "./.git" -not -path "." -exec rm -rf {} \;
+          
+          # Move contents of _site to root
+          mv _site/* .
+          rmdir _site
+          
+          # Add all changes to git
+          git add -A
+          git commit -m "Deploy Jekyll site to GitHub Pages"
+          
+          # Force push to the gh-pages branch
+          git push -f origin gh-pages
