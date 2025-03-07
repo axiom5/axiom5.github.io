@@ -30,9 +30,9 @@
 
 
 backend:
-  name: git-gateway # proxy #
-  # proxy_url: http://localhost:8081/api/v1
-  branch: main # or master, depending on your main branch name
+  name: github
+  repo: axiom5/axiom5.github.io  #  <--  REPLACE THIS with your info!
+  branch: main
 
 media_folder: "assets/img"  # Where uploaded images are stored
 public_folder: "/assets/img"
