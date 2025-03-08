@@ -62,17 +62,20 @@
 # For production, use GitHub backend
 backend:
   name: github
-  repo: axiom5/aseem.github.io # Your GitHub username/repo
+  repo: axiom5/aseem.github.io # Replace with your actual GitHub repo
   branch: main
+  base_url: https://axiom5.netlify.app # Replace with your Netlify OAuth server URL
+  auth_endpoint: api/auth # This should match the function path we set up
 
-# publish_mode: editorial_workflow
-
-# For local development
+# Local development config
 local_backend: true
 
+# Publish mode
+publish_mode: editorial_workflow
+
 # Media folder where uploads will be stored
-media_folder: "assets/img"
-public_folder: "/assets/img"
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
 
 # Collections define the structure for content types
 collections:
