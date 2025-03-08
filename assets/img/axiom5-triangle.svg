@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+
+  
+  <!-- Design 2: Geometric Triangle with Orange/Copper Theme -->
+  <g transform="translate(250, 50)">
+    <!-- Geometric foundation shape representing axiom -->
+    <polygon points="20,50 40,15 60,50" stroke="#e67e22" stroke-width="2" fill="none"/>
+    <line x1="30" y1="50" x2="50" y2="50" stroke="#e67e22" stroke-width="2"/>
+    
+    <!-- Subtle grid lines suggesting mathematical foundation -->
+    <line x1="20" y1="35" x2="60" y2="35" stroke="#e67e22" stroke-width="0.5" stroke-opacity="0.3"/>
+    <line x1="40" y1="15" x2="40" y2="50" stroke="#e67e22" stroke-width="0.5" stroke-opacity="0.3"/>
+    
+    <!-- A small point/dot at the top representing a singular truth -->
+    <circle cx="40" cy="15" r="2" fill="#d35400"/>
+    
+    <!-- Number 5 in a professional style with matching theme -->
+    <text x="60" y="33" font-family="'Trebuchet MS', sans-serif" font-size="28" font-weight="bold" fill="#c0392b">5</text>
+
+  </g>
+  
+</svg>

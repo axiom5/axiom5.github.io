@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://aseem.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://aseem.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-03-08T06:22:07+00:00</updated><id>https://aseem.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">Scaling Laws in Deep Learning</title><link href="https://aseem.github.io/blog/2025/scaling-laws-in-deep-learning/" rel="alternate" type="text/html" title="Scaling Laws in Deep Learning" /><published>2025-03-08T01:11:44+00:00</published><updated>2025-03-08T01:11:44+00:00</updated><id>https://aseem.github.io/blog/2025/scaling-laws-in-deep-learning</id><content type="html" xml:base="https://aseem.github.io/blog/2025/scaling-laws-in-deep-learning/"><![CDATA[<div style="margin: 20px 0; text-align: center;">
+  <img src="/assets/img/sun-and-star.jpg" alt="Image description" style="width: 100%; border-radius: 10px;" />
+</div>
+
+<p>“Scaling law” sounds technical, but it’s pretty straightforward: make ‘em bigger, feed ‘em more, they get better (unlike us who actually start functioning slower after a burrito with extra chicken). Well, mostly.</p>
+
+<h3 id="physics-dropping-knowledge-again">Physics Dropping Knowledge (Again)</h3>
+
+<p>Believe it or not, the notion of scaling isn’t exclusive to deep learning. Physicists have long observed that as you increase the size or energy of a system, its behavior changes in predictable—and sometimes dramatic—ways. Imagine heating a single water droplet versus a whole pot of water: the boiling process isn’t just a scaled-up version of what happens in that tiny droplet. That’s the vibe we’re talking about in AI. This predictability in change is the essence of scaling laws in physics, and it provided the inspiration for AI researchers to ask: what happens if we just keep making our neural networks bigger and better?</p>
+
+<div style="margin: 20px 0; text-align: center;">
+  <img src="/assets/img/scaling-laws-of-small-l-3333176480.jpg" alt="Image description" style="width: 50%; border-radius: 10px;" />
+</div>
+
+<h3 id="early-clues-translation-was-onto-something">Early Clues: Translation Was Onto Something</h3>
+
+<p>Turns out, scale was the secret sauce.  Back in the day, researchers were wrestling with machine translation. And they noticed, the bigger the model, the more data it saw, the better it translated. Duh! But it was a big deal at the time.</p>
+
+<p>This paper from 2014, “<a href="https://www.google.com/search?q=https://proceedings.neurips.cc/paper_files/paper/2014/file/a14ac55a4f27472c5d89029b8231495a-Paper.pdf">Sequence to sequence learning with neural networks</a>”, kinda hinted at this.  Sutskever, Vinyals, and Le showed that bigger “sequence-to-sequence” models, trained on loads of text, just translated better.  No “scaling laws” label yet, but the scale effect was obvious.</p>
+
+<h3 id="the-scaling-laws-paper--formulas-and-stuff">The Scaling Laws Paper:  Formulas and Stuff</h3>
+
+<p>Then, 2020 rolls around, and OpenAI drops “<a href="https://www.google.com/url?sa=E&amp;source=gmail&amp;q=https://www.google.com/url?sa=E%26source=gmail%26q=https://www.google.com/url?sa=E%26source=gmail%26q=http://arxiv.org/pdf/2001.08361">Scaling Laws for Neural Language Models</a>”.  Kaplan and co. actually put numbers on this scaling thing.  Formulas, even.</p>
+
+<p>Turns out, performance improves predictably when you scale:</p>
+
+<ul>
+  <li><strong>Model Size (N):</strong>  Bigger brain. More connections.  You get it.</li>
+  <li><strong>Dataset Size (D):</strong> More data gives the model a richer tapestry of patterns to learn from.</li>
+  <li><strong>Compute (C):</strong> The raw horsepower behind the training process.</li>
+</ul>
+
+<p>They even gave us some rough formulas, showing loss goes down as you crank up N, D, and C.  Numbers like <em>αN</em> ≈ 0.076, <em>αD</em> ≈ 0.095, <em>αC</em> ≈ 0.050 floating around.  In other words, the more you invest in these areas, the better your model gets—but with diminishing returns as you push the limits.</p>
+
+<div style="margin: 20px 0; text-align: center;">
+  <img src="/assets/img/7lhht8n.png" alt="Image description" style="width: 80%; border-radius: 10px;" />
+</div>
+
+<h3 id="smarter-scaling-is-a-thing">Smarter Scaling is a Thing</h3>
+
+<p>So, just keep making models huge?  Not <em>exactly</em>.  DeepMind chimed in 2022 with the “Chinchilla scaling” idea.  Paper’s called “<a href="https://www.google.com/url?sa=E&amp;source=gmail&amp;q=https://www.google.com/url?sa=E%26source=gmail%26q=https://arxiv.org/pdf/2203.15556">Training compute-optimal large language models</a>” if you’re digging deeper.  Basically, they argued maybe we were making models <em>too</em> big, not using data efficiently.  They suggested for the same compute, you might be better off with a slightly smaller model but <em>way</em> more data.  Smarter scaling, not just brute force. It’s a bit like cooking stew: you can’t just pile on ingredients without considering how they blend together. Efficient scaling is about striking the right balance rather than simply reaching for the largest pot with every condiment thrown in.</p>
+
+<p>Scale still rules, but it’s nuanced.  It’s about balancing size, data, and compute.  People are still figuring out the details:</p>
+
+<ul>
+  <li><strong>Inference Compute:</strong>  Giving models more “think time” even <em>after</em> training can boost performance.</li>
+  <li><strong>Better Architectures:</strong>  Designing models that are just inherently better learners, getting more bang for your buck from data and compute.</li>
+  <li><strong>Beyond Simple Formulas:</strong>  Power laws are cool, but maybe there’s more to the story. Sadly, the compute to do such analysis isnt available to every independent researcher :’(</li>
+</ul>
+
+<h3 id="are-we-gonna-max-out">Are We Gonna Max Out?</h3>
+
+<p>Though scaling’s been good to us, it poses the question if we are then heading for an <strong>“information ceiling?”</strong>  Basically, is there only so much info out there to train on?  Once AI’s seen it all, does scaling even matter anymore?</p>
+
+<p>Debate’s still raging.  But some things to consider:</p>
+
+<ul>
+  <li><strong>Data Quality is King:</strong>  More data isn’t always better data.  Crappy data in, crappy AI out.</li>
+  <li><strong>Emergence vs. Understanding:</strong>  These models are doing impressive stuff.  But are they <em>actually</em> understanding, or just mimicking patterns?  Scaling might not bridge that gap. (Emergence is a way cooler and mystical enigma if you are interested!)</li>
+  <li><strong>Compute Costs (Planet Too):</strong>  Training these monsters is expensive and energy-hungry.  Endless scaling wouldn’t be so sustainable.</li>
+</ul>
+
+<h3 id="why-vision-models-so-bad">Why Vision models so bad?:</h3>
+<p>We’ve all seen generative models tweaking and tripping, which (unless they are purely diffusion-models) funnily enough, also use transformer architectures as backbone.</p>
+
+<ul>
+  <li><strong>Them fingers:</strong> Motion of legs is bad, and fingers are rendered even worse. I honestly haven’t found a reasonable answer, but there are theories.</li>
+  <li><strong>Dial Clocks:</strong>  All of them show 10 past 10, since all models were trained with watch faces available in the internet, and all of them clocks do tell 10:10:30. See for yourself.</li>
+  <li><strong>Wine in glass:</strong>  All of them are half full, aren’t they? Same. Pictures from the internet</li>
+  <li><strong>Maths and “Strawberry”:</strong>  One of the reasons openAI’s O1 was code-named strawberry was for the infamous problem of initial LLMs not understanding this question (of how many r’s are there in a strawberry). Believe it or not, LLMs sucked at maths for the same reason (kinda): Tokenization.</li>
+</ul>
+
+<p>There is a ceiling from the data available to us so far, since we have used most of them up! New research will move towards new ways to make AI truly intelligent, not just… big.  It’s gonna be interesting, we are finally going to move past the overhyped stuff.</p>
+
+<div style="margin: 20px 0; text-align: center;">
+  <img src="/assets/img/dental-scaling.jpg" alt="Remember to get your teeth scaled" style="width: 80%; border-radius: 10px;" />
+</div>
+
+<p><strong>References:</strong></p>
+
+<ul>
+  <li>Sutskever et al. (2014): “<a href="https://www.google.com/search?q=https://proceedings.neurips.cc/paper_files/paper/2014/file/a14ac55a4f27472c5d89029b8231495a-Paper.pdf">Sequence to sequence learning with neural networks</a>” -  Early hints of scale’s power in translation.</li>
+  <li>Kaplan et al. (2020): “<a href="https://www.google.com/url?sa=E&amp;source=gmail&amp;q=https://www.google.com/url?sa=E%26source=gmail%26q=https://www.google.com/url?sa=E%26source=gmail%26q=http://arxiv.org/pdf/2001.08361">Scaling Laws for Neural Language Models</a>” -  The scaling laws bible.</li>
+  <li>Hoffmann et al. (2022): “<a href="https://www.google.com/url?sa=E&amp;source=gmail&amp;q=https://www.google.com/url?sa=E%26source=gmail%26q=https://arxiv.org/pdf/2203.15556">Training compute-optimal large language models</a>” -  Scaling, but make it efficient.</li>
+</ul>]]></content><author><name>Aseem Subedi</name></author><category term="AI," /><category term="scaling" /><category term="laws," /><category term="LLMs," /><category term="fingers" /><summary type="html"><![CDATA[]]></summary></entry></feed>

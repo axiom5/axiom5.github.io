@@ -1,0 +1,122 @@
+# backend:
+#   name: git-gateway
+#   proxy_url: http://localhost:8081/api/v1
+#   branch: master # Or your main branch name, e.g., main, master
+
+# media_folder: assets/img # Where media files will be stored (adjust if needed)
+# public_folder: assets/img # The public path for media files (adjust if needed)
+
+# collections:
+#   - name: 'posts' # Used in routes, e.g., /admin/collections/blog
+#     label: 'Blog Posts' # Human readable name
+#     folder: '_posts' # Path to files
+#     create: true # Allow users to create new posts in this collection
+#     slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., 2025-02-23-my-post.md
+#     format: 'markdown' # or 'yaml', 'json', 'toml'
+#     fields: # Fields for each document, same as TinaCMS fields
+#       - { label: 'Title', name: 'title', widget: 'string' }
+#       - { label: 'Date', name: 'date', widget: 'datetime' }
+#       - { label: 'Body', name: 'body', widget: 'markdown' }
+#       - { label: 'Thumbnail Image', name: 'thumbnail', widget: 'image', required: false, allow_url: false }
+
+#   - name: 'pages'
+#     label: 'Pages'
+#     folder: '_pages'
+#     create: true
+#     format: 'markdown'
+#     fields:
+#       - { label: 'Title', name: 'title', widget: 'string' }
+#       - { label: 'Body', name: 'body', widget: 'markdown' }
+
+
+# backend:
+#   name: github # proxy #
+#   # proxy_url: http://localhost:8081/api/v1
+#   branch: main # or master, depending on your main branch name
+
+# media_folder: "assets/img"  # Where uploaded images are stored
+# public_folder: "/assets/img"
+
+# collections:
+#   - name: "projects"
+#     label: "Projects"
+#     folder: "_projects"
+#     create: true
+#     format: "frontmatter"
+#     fields:
+#       - { label: "Title", name: "title", widget: "string" }
+#       - { label: "Body", name: "body", widget: "markdown" }
+
+#   - name: "posts"
+#     label: "Blog Posts"
+#     folder: "_posts"
+#     create: true
+#     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+#     format: "frontmatter"
+#     fields:
+#       - { label: "Title", name: "title", widget: "string" }
+#       - { label: "Date", name: "date", widget: "datetime" }
+#       - { label: "Body", name: "body", widget: "markdown" }
+#       - { label: "Image", name: "thumbnail", widget: "image", required: false }
+
+# For production, use GitHub backend
+backend:
+  name: github
+  repo: axiom5/aseem.github.io # Replace with your actual GitHub repo
+  branch: main
+  base_url: https://axiom5.netlify.app # Replace with your Netlify OAuth server URL
+  auth_endpoint: api/auth # This should match the function path we set up
+
+# Local development config
+local_backend: true
+
+# Publish mode
+publish_mode: editorial_workflow
+
+# Media folder where uploads will be stored
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+# Collections define the structure for content types
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "_pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "select", options: ["page"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Permalink", name: "permalink", widget: "string", pattern: ['^/[a-zA-Z0-9-/]+/$', "Must start with a slash and end with a slash"]}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "_projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "select", options: ["project"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Category", name: "category", widget: "select", options: ["work", "personal", "research"], required: false}
+      - {label: "Importance", name: "importance", widget: "number", min: 1, step: 1, required: false}
+      - {label: "Featured Image", name: "img", widget: "image", required: false}
+      - {label: "Redirect Link", name: "redirect", widget: "string", required: false}
+      - {label: "GitHub Link", name: "github_link", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "select", options: ["post"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string", default: "Aseem Subedi"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
