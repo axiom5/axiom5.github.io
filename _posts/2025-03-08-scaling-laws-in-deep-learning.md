@@ -12,7 +12,7 @@ featured_image: ""
   <img src="/assets/img/sun-and-star.jpg" alt="Image description" style="width: 100%; border-radius: 10px;" />
 </div>
 
-AI's suddenly doing all sorts of stuff – recognizing faces, writing (sort of) okay stories, the whole deal. Ever wonder what's behind it? A lot of it's this idea called **scaling laws**. Sounds technical, but it's pretty straightforward: make 'em bigger, feed 'em more, they get better (unlike us who actually start functioning slower after a burrito with extra chicken). Mostly.
+"Scaling law" sound technical, but but it's pretty straightforward: make 'em bigger, feed 'em more, they get better (unlike us who actually start functioning slower after a burrito with extra chicken). Mostly.
 
 ### Physics Dropping Knowledge (Again)
 
