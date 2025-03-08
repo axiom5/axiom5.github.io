@@ -12,7 +12,7 @@ featured_image: ""
   <img src="/assets/img/sun-and-star.jpg" alt="Image description" style="width: 100%; border-radius: 10px;" />
 </div>
 
-"Scaling law" sound technical, but but it's pretty straightforward: make 'em bigger, feed 'em more, they get better (unlike us who actually start functioning slower after a burrito with extra chicken). Mostly.
+"Scaling law" sounds technical, but it's pretty straightforward: make 'em bigger, feed 'em more, they get better (unlike us who actually start functioning slower after a burrito with extra chicken). Well, mostly.
 
 ### Physics Dropping Knowledge (Again)
 
@@ -69,11 +69,11 @@ Debate's still raging.  But some things to consider:
 * **Compute Costs (Planet Too):**  Training these monsters is expensive and energy-hungry.  Endless scaling wouldn't be so sustainable.
 
 ### Why Vision models so bad?:
+We've all seen generative models tweaking and tripping, which (unless they are purely diffusion-models) funnily enough, also use transformer architectures as backbone. 
 
-
-* **Bad fingers:** Motion of legs is bad, and fingers are rendered even worse. I honestly haven't found a reasonable answer, but there are theories.
-* **Clocks:**  All of them show 10 past 10, since all models were trained with watch faces available in the internet, and all of them clocks do tell 10:10:30. See for yourself.
-* **Wine glasses:**  All of them are half full, aren't they? Same. Pictures from the internet
+* **Them fingers:** Motion of legs is bad, and fingers are rendered even worse. I honestly haven't found a reasonable answer, but there are theories.
+* **Dial Clocks:**  All of them show 10 past 10, since all models were trained with watch faces available in the internet, and all of them clocks do tell 10:10:30. See for yourself.
+* **Wine in glass:**  All of them are half full, aren't they? Same. Pictures from the internet
 * **Maths and "Strawberry":**  One of the reasons openAI's O1 was code-named strawberry was for the infamous problem of initial LLMs not understanding this question (of how many r's are there in a strawberry). Believe it or not, LLMs sucked at maths for the same reason (kinda): Tokenization.
 
 There is a ceiling from the data available to us so far, since we have used most of them up! New research will move towards new ways to make AI truly intelligent, not just… big.  It's gonna be interesting, we are finally going to move past the overhyped stuff.
